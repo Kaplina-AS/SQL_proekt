@@ -15,6 +15,12 @@ CREATE TABLE customer (
     is_active BOOLEAN DEFAULT TRUE
 )
 ```
+### Скрипт для наполнени таблицы данными
+
+```
+INSERT INTO customer (first_name, last_name, email, password_hash) VALUES
+('Иван', 'Иванов', 'ivan@example.com', 'hashed_password_example')
+```
 
 ### Назначение таблицы
 
@@ -24,7 +30,7 @@ CREATE TABLE customer (
 
 |Название поля|Описание|Тип данных|Ограничение|
 |-|-|-|-|
-|customer_id|Уникальный идентификатор покупателя|serial|NOT NULL|
+|customer_id|Уникальный идентификатор покупателя|serial|PRIMARY KEY|
 |first_name|Имя покупателя|varchar(255)|NOT NULL|
 |last_name|Фамилия покупателя|varchar(255)|NOT NULL|
 |email|Адрес электронной почты покупателя|varchar(255)|UNIQUE NOT NULL|
