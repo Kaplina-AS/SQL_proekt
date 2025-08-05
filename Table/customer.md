@@ -11,15 +11,24 @@ CREATE TABLE customer (
     phone_number VARCHAR(20),
     address TEXT,
     registration_date TIMESTAMP WITHOUT TIME ZONE DEFAULT (NOW() AT TIME ZONE 'utc'),
-    password_hash VARCHAR(255) NOT NULL,
     is_active BOOLEAN DEFAULT TRUE
 )
 ```
 ### Скрипт для наполнени таблицы данными
 
 ```
-INSERT INTO customer (first_name, last_name, email, password_hash) VALUES
-('Иван', 'Иванов', 'ivan@example.com', 'hashed_password_example')
+INSERT INTO customer (first_name, last_name, email, phone_number, address, registration_date) VALUES
+('Иван', 'Иванов', 'ivan@example.com', 'Москва, ул. Тверская, д. 10', 'Москва, ул. Тверская, д. 10', '+79031234567',',  '2022-08-02'),
+('Александр', 'Иванов', 'ivanov@example.com', 'Санкт-Петербург, Невский пр., д. 25', '+79169876543',  '2022-12-01'),
+('Елена', 'Петрова', 'petrova@example.com', 'Екатеринбург, ул. Ленина, д. 30', '+79265551234', '2023-01-15'),
+('Сергей', 'Сидоров', 'sidorov@example.com', 'Казань, ул. Баумана, д. 5', '+79651112233', '2023-02-20'),
+('Ольга', 'Смирнова', 'smirnova@example.com', 'Новосибирск, Красный пр., д. 15', '+79852223344', '2023-03-10'),
+('Дмитрий', 'Кузнецов', 'kuznetsov@example.com', 'Ростов-на-Дону, ул. Большая Садовая, д. 20', '+79057778899', '2023-04-05'),
+('Анна', 'Васильева', 'vasilieva@example.com', 'Самара, ул. Ленинградская, д. 12', '+79153334455', '2023-05-12'),
+('Игорь', 'Морозов', 'morozov@example.com', 'Омск, ул. Ленина, д. 8', '+79258889900', '2023-06-25'),
+('Наталья', 'Волкова', 'volkova@example.com', 'Челябинск, пр. Ленина, д. 22', '+79634445566','2023-07-08'),
+('Андрей', 'Павлов', 'pavlov@example.com', 'Уфа, пр. Октября, д. 35', '+79839990011','2023-08-15'),
+('Светлана', 'Лебедева', 'lebedeva@example.com', '2023-09-01')
 ```
 
 ### Назначение таблицы
