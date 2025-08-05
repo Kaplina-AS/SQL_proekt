@@ -14,11 +14,11 @@ CREATE TABLE customer (
     is_active BOOLEAN DEFAULT TRUE
 )
 ```
-### Скрипт для наполнени таблицы данными
+### Скрипт для наполнения таблицы данными
 
 ```
-INSERT INTO customer (first_name, last_name, email, phone_number, address, registration_date) VALUES
-('Иван', 'Иванов', 'ivan@example.com', 'Москва, ул. Тверская, д. 10', 'Москва, ул. Тверская, д. 10', '+79031234567',',  '2022-08-02'),
+INSERT INTO customer (first_name, last_name, email, address, phone_number, registration_date) VALUES
+('Иван', 'Иванов', 'ivan@example.com', 'Москва, ул. Тверская, д. 10', '+79031234567', '2022-08-02'),
 ('Александр', 'Иванов', 'ivanov@example.com', 'Санкт-Петербург, Невский пр., д. 25', '+79169876543',  '2022-12-01'),
 ('Елена', 'Петрова', 'petrova@example.com', 'Екатеринбург, ул. Ленина, д. 30', '+79265551234', '2023-01-15'),
 ('Сергей', 'Сидоров', 'sidorov@example.com', 'Казань, ул. Баумана, д. 5', '+79651112233', '2023-02-20'),
@@ -28,7 +28,7 @@ INSERT INTO customer (first_name, last_name, email, phone_number, address, regis
 ('Игорь', 'Морозов', 'morozov@example.com', 'Омск, ул. Ленина, д. 8', '+79258889900', '2023-06-25'),
 ('Наталья', 'Волкова', 'volkova@example.com', 'Челябинск, пр. Ленина, д. 22', '+79634445566','2023-07-08'),
 ('Андрей', 'Павлов', 'pavlov@example.com', 'Уфа, пр. Октября, д. 35', '+79839990011','2023-08-15'),
-('Светлана', 'Лебедева', 'lebedeva@example.com', '2023-09-01')
+('Светлана', 'Лебедева', 'lebedeva@example.com', '', '', '2023-09-01')
 ```
 
 ### Назначение таблицы
