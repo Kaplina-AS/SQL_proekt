@@ -4,7 +4,7 @@
 
 ```
 CREATE TABLE payment_method (
-    payment_method_id SERIAL PRIMARY KEY,  -- Уникальный идентификатор способа оплаты (автоинкрементное целое число)
+    payment_method_id SERIAL PRIMARY KEY,  
     payment_method_name VARCHAR(255) NOT NULL
 )
 ```

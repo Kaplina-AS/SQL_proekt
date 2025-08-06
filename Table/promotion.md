@@ -3,20 +3,25 @@
 ### Срипт для создания таблицы
 
 ```
-CREATE TABLE product_review (
-    review_id SERIAL PRIMARY KEY,
-    customer_id INTEGER REFERENCES customer (customer_id),
-    product_id INTEGER REFERENCES product (product_id),
-    rating INTEGER NOT NULL CHECK (rating BETWEEN 1 AND 5),  -- Оценка от 1 до 5
-    comment TEXT,
-    review_date TIMESTAMP WITHOUT TIME ZONE DEFAULT (NOW() AT TIME ZONE 'utc')
-)
+CREATE TABLE promotion (
+    promotion_id SERIAL PRIMARY KEY,
+    promotion_name VARCHAR(255) NOT NULL,
+    description TEXT,
+    discount_percentage DECIMAL(5,2) NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    is_active BOOLEAN DEFAULT TRUE
+);
 ```
 ### Скрипт для наполнени таблицы данными
 
 ```
-INSERT INTO product_review (customer_id, product_id, rating, comment) VALUES
-(1, 1, 5, 'Отличные кроссовки!')
+INSERT INTO promotion (promotion_name, description, discount_percentage, start_date, end_date) VALUES
+('Летняя распродажа', 'Скидки на все летние товары', 10.00, '2023-06-01', '2023-08-31'),
+('Чёрная пятница', 'Грандиозные скидки на все категории товаров', 25.00, '2023-11-24', '2023-11-24'),
+('Киберпонедельник', 'Скидки на электронику и гаджеты', 15.00, '2023-11-27', '2023-11-27'),
+('Новогодняя акция', 'Скидки на подарки к новому году', 20.00, '2023-12-15', '2024-01-07'),
+('Весенние скидки', 'Скидки на весеннюю коллекцию', 30.0, '2024-03-01', '2024-05-31');
 ```
 
 ### Назначение таблицы

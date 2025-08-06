@@ -14,7 +14,11 @@ CREATE TABLE cart_item (
 
 ```
 INSERT INTO cart_item (cart_id, product_id, quantity) VALUES
-(1, 1, 2)
+(1, 3, 2),
+(2, 4, 1),
+(3, 12, 20),
+(4, 9, 3),
+(5, 7, 1)
 ```
 
 ### Назначение таблицы

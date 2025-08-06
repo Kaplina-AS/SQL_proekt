@@ -19,17 +19,19 @@ CREATE TABLE product (
 ### Скрипт для наполнени таблицы данными
 
 ```
-INSERT INTO product (product_name, category_id, product_price) VALUES
-('Кроссовки беговые', 1, 120.00),
-('Футболка спортивная', 2, 30.00),
-('Шорты спортивные', 2, 40.00),
-('Рюкзак спортивный', 7, 60.00),
-('Протеин сывороточный', 8, 50.00),
-('Шейкер спортивный', 8, 15.00),
-('Кеды повседневные', 1, 80.00),
-('Толстовка спортивная', 2, 70.00),
-('Беговая дорожка', NULL, 1000.00),
-('Гантели 5 кг', 6, 25.00); 
+INSERT INTO product (product_name, description, product_price, stock_quantity, category_id, brand_id, image_url) VALUES
+('Nike Air Max 270', 'Кроссовки для повседневной носки', 150.00, 50, 1, 1, 'https://example.com/nike_airmax270.jpg'),
+('Adidas Tiro 23 Training Pants', 'Тренировочные штаны Adidas', 60.00, 100, 2, 2, 'https://example.com/adidas_tiro.jpg'),
+('Puma тренировочный коврик', 'Коврик для йоги и фитнеса', 25.00, 75, 3, 3, 'https://example.com/puma_mat.jpg'),
+('Reebok Training Backpack', 'Рюкзак для тренировок', 45.00, 60, 4, 4, 'https://example.com/reebok_backpack.jpg'),
+('Demix гантели 2 кг', 'Гантели для фитнеса', 15.00, 120, 3, 5, 'https://example.com/demix_dumbbells.jpg'),
+('Nike Pro Combat шорты', 'Компрессионные шорты для тренировок', 40.00, 80, 2, 1, 'https://example.com/nike_pro_shorts.jpg'),
+('Adidas Ultraboost 23', 'Беговые кроссовки Adidas', 180.00, 40, 1, 2, 'https://example.com/adidas_ultraboost.jpg'),
+('Puma мяч для фитнеса', 'Мяч для пилатеса и фитнеса', 30.00, 90, 3, 3, 'https://example.com/puma_ball.jpg'),
+('Reebok шапка для тренировок', 'Шапка для занятий спортом на улице', 20.00, 110, 4, 4, 'https://example.com/reebok_hat.jpg'),
+('Demix футболка', 'Футболка для тренировок', 25.00, 150, 2, 5, 'https://example.com/demix_tshirt.jpg'),
+('Nike Revolution 6', 'Бюджетные беговые кроссовки Nike', 70.00, 65, 1, 1, 'https://example.com/nike_revolution.jpg'),
+('Adidas носки', 'Спортивные носки Adidas', 10.00, 200, 4, 2, 'https://example.com/adidas_socks.jpg');
 ```
 
 ### Назначение таблицы
@@ -48,6 +50,6 @@ INSERT INTO product (product_name, category_id, product_price) VALUES
 |category_id|Внешний ключ, указывающий на категорию, к которой принадлежит товар|integer|REFERENCES category (category_id)|
 |brand_id|Внешний ключ, указывающий на бренд товара|integer|REFERENCES brand (brand_id)|
 |image_url|URL-адрес изображения товара|varchar(255)||
-|created_at|Описани товара|timestamp without timezone|DEFAULT (NOW() AT TIME ZONE 'utc')|
-|updated_at|Описани товара|timestamp without timezone|DEFAULT (NOW() AT TIME ZONE 'utc')|
-|search_vector|Описани товара|TSVECTOR||
+|created_at|Дата и время создания записи о товаре|timestamp without timezone|DEFAULT (NOW() AT TIME ZONE 'utc')|
+|updated_at|Дата и время последнего обновления информации о товаре|timestamp without timezone|DEFAULT (NOW() AT TIME ZONE 'utc')|
+|search_vector|Колонка для полнотекстового поиска|TSVECTOR||
